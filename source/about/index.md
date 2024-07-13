@@ -20,10 +20,11 @@ date: 2024-05-03 22:54:28
  - kay / 男 / 1999 / 江苏淮安
  - 本科 / 苏州科技大学天平学院 
  - 工作年限：应届生(2024年6月毕业)
- - Github：http://github.com/TooUpper
+ - Github：http://github.com/it-kay
+ - Blog：www.tooupper.org
  - 期望职位：计算机/制造业相关行业均可
  - 期望薪资：面议
- - 期望城市：不限
+ - 期望城市：江苏 / 上海
 
 ---
 
@@ -67,4 +68,4 @@ date: 2024-05-03 22:54:28
 - 数据库相关：MySQL / PgSQL
 - 版本管理、文档和自动化部署工具：Svn /Git
 - 后端框架：spring / springmvc / spring boot / mybatis / hibernate
-- 编程语言：Jav / Go / Rust / C    
+- 编程语言：Jav / Go / Rust / C  / lua

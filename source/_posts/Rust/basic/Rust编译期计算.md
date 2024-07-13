@@ -1,5 +1,5 @@
 ---
-title: "Rust基础"
+title: "Rust编译期计算"
 date: 2024-06-20 21:51:02
 categories: "Rust"
 tags: 
