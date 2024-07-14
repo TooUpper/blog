@@ -99,5 +99,5 @@ theme: cactus
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: 'git'
-  repo: https://github.com/it-kay/it-kay.github.io.git
+  repo: git@github.com:it-kay/it-kay.github.io.git
   branch: main
