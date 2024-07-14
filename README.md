@@ -2,7 +2,7 @@
 ## 克隆blog到本地
 
 ~~~shell
-git clone git@github.com:TooUpper/blog.git
+git clone git@github.com:it-kay/blog.git
 ~~~
 
 ## 下载依赖包
@@ -47,4 +47,3 @@ www.TooUpper.com // 自定义的域名
 **1.powershell 提示在此系统上禁止运行脚本**
 
 **系统** -> **开发者选项** -> **PowerShell** -> 打开*更改执行策略，以允许本地PowerShell脚本在未签名的情况下运行*。远程脚本需要签名”。
-
