@@ -40,10 +40,14 @@ www.TooUpper.com // 自定义的域名
 
 然后重新发布即可。
 
-
-
 ## 错误
 
 **1.powershell 提示在此系统上禁止运行脚本**
 
 **系统** -> **开发者选项** -> **PowerShell** -> 打开*更改执行策略，以允许本地PowerShell脚本在未签名的情况下运行*。远程脚本需要签名”。
+
+**2.本地搜索报错`redirect error search/undefined`**
+
+此问题原因是所用主题中的“search.js”文件获取 URL 时出现问题。
+
+将所用主题的`rarch.js`文件中的`url: $("link", this).attr("href")`替换为`url: $( "url" , this).text()`即可。
