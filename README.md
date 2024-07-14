@@ -50,4 +50,4 @@ www.TooUpper.com // 自定义的域名
 
 此问题原因是所用主题中的“search.js”文件获取 URL 时出现问题。
 
-将所用主题的`rarch.js`文件中的`url: $("link", this).attr("href")`替换为`url: $( "url" , this).text()`即可。
+将所用主题的`search.js`文件中的`url: $("link", this).attr("href")`替换为`url: $( "url" , this).text()`即可。
