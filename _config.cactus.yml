@@ -161,11 +161,11 @@ open_graph:
 # Plugins
 ##############################################################################
 
-# Enable MathJax support for Latex
+# #为Latex启用MathJax支持
 mathjax:
   enabled: true
 
-# Fill in your Disqus Comments Shortname to enable Disqus comments.
+# #填写您的Disqus评论简称以启用Disqus注释。
 disqus:
   enabled: false
   shortname: cactus-1
