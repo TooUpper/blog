@@ -10,7 +10,7 @@ git clone git@github.com:it-kay/blog.git
 项目根目录下执行：
 
 ~~~she
-npm install hexo-cli -g
+npm install hexo-cli -g // Linux 下需要以root权限运行
 npm install
 ~~~
 
