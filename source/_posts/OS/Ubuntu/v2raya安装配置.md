@@ -3,8 +3,7 @@ title: "v2raya安装配置"
 date: 2024-07-26 19:16:00
 categories: "OS"
 tags: 
-- "Linux"
-- "v2raya"
+- "Ubuntu"
 ---
 
 ## 安装 v2ray-core
