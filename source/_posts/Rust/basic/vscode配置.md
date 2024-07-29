@@ -10,10 +10,8 @@ tags:
 # 安装必要插件
 
 - rust-analyzer ：Rust 插件
-- crates ：crate 相关插件
+- Dependi ：crate 相关插件
 - Even Better TOML ：TOML 语法高亮
-
-
 
 # 一些非必要但是好用的 crate
 
