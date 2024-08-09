@@ -29,7 +29,7 @@ nav:
 social_links:
   -
     icon: github
-    link: http://github.com/TooUpper
+    link: http://github.com/it-kay
   -
     icon: x-twitter
     link: /
@@ -44,7 +44,7 @@ social_links:
     link: weixin://
   -
     icon: qq
-    link: http://wpa.qq.com/msgrd?v=3&uin=3083875056&site=qq&menu=yes
+    link: http://wpa.qq.com/msgrd?v=3&uin=734913&site=qq&menu=yes
 
 # Customize the overview with displaying a tagcloud on the index page.
 # Options: https://hexo.io/docs/helpers.html#tagcloud
