@@ -1,5 +1,5 @@
 ---
-title: "Ubuntu"
+title: "MySQL"
 date: 2024-08-11 24:23:02
 categories: "Linux"
 tags: 
