@@ -6,12 +6,5 @@ tags:
 - "单片机"
 ---
 
+## STC8H
 
-
-
-
-
-
-![chuanbingliandianlu](/public/image/嵌入式/模电基础/chuanbingliandianlu.png)
-
-工作模式
