@@ -1,5 +1,5 @@
 ---
-title: "I2C"
+title: "I2C总线"
 date: 2024-09-11 17:43:00
 categories: "嵌入式"
 tags: 
