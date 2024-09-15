@@ -1,0 +1,8 @@
+---
+title: "GPIO"
+date: 2024-09-02 08:41:00
+categories: "嵌入式"
+tags: 
+- "STC8H"
+---
+
