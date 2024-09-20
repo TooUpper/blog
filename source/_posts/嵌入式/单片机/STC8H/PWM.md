@@ -164,9 +164,10 @@ void main() {
                 stop_motor();
             }
         }
-        COM1.RX_Cnt = 0;        
-    }
-    delay_ms(20);          
+        COM1.RX_Cnt = 0;   
+        
+        delay_ms(20); 
+    }         
 }
 ```
 
