@@ -219,7 +219,7 @@ void main() {
     EA = 1;
     
     usb_init();
-    URAT_Config();
+    //URAT_Config();
 	MK_Init();
     
     while(1) {
