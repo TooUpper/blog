@@ -55,7 +55,7 @@ GPIO（General Purpose Input/Output）是“通用输入输出”的缩写，它
 
 默认状态下引脚处于高电平状态，且引脚内部连接了一个弱上拉电阻，既可以作为输入，也可以作为输出，不需要额外设置方向寄存器。
 
-![image-20241007194258245](C:\Users\kay\AppData\Roaming\Typora\typora-user-images\image-20241007194258245.png)
+![GPIOzhunshuangxiang](/public/image/嵌入式/MCU/STC8H/GPIOzhunshuangxiang.png)
 
 ### **推挽输出模式**
 
@@ -64,7 +64,7 @@ GPIO（General Purpose Input/Output）是“通用输入输出”的缩写，它
 
 强推挽引脚配置如下图所示:
 
-![image-20241007194417805](C:\Users\kay\AppData\Roaming\Typora\typora-user-images\image-20241007194417805.png)
+![GPIOtuiwanshuchu](/public/image/嵌入式/MCU/STC8H/GPIOtuiwanshuchu.png)
 
 ### **开漏输出模式**
 
@@ -80,13 +80,13 @@ GPIO（General Purpose Input/Output）是“通用输入输出”的缩写，它
 
 输出端口配置如下图所示:
 
-![image-20241007194455710](C:\Users\kay\AppData\Roaming\Typora\typora-user-images\image-20241007194455710.png)
+![GPIOkailou](/public/image/嵌入式/MCU/STC8H/GPIOkailou.png)
 
 ### **高阻输入模式**
 
  电流既不能流入也不能流出。通常由三态缓冲器等电路元件实现。
 
-![image-20241007194441170](C:\Users\kay\AppData\Roaming\Typora\typora-user-images\image-20241007194441170.png)
+![GPIOgaozu](/public/image/嵌入式/MCU/STC8H/GPIOgaozu.png)
 
 **电气特性：**
 
