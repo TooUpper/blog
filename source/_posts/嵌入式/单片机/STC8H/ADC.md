@@ -79,6 +79,7 @@ void ADC_Config(void) {
     // ADC 模拟信号采样时间控制, 0~31（注意： SMPDUTY 一定不能设置小于 10）
     ADC_Init.ADC_SMPduty = 31; 
     // 设置 ADC 工作时钟频率 ADC_SPEED_2X1T~ADC_SPEED_2X16T
+    // 可以理解为 ADC 采样的频率或者说次数，一秒钟采样多少次
     ADC_Init.ADC_Speed = ADC_SPEED_2X1T;
     // ADC结果调整,	ADC_LEFT_JUSTIFIED,ADC_RIGHT_JUSTIFIED
     ADC_Init.ADC_AdjResult = ADC_RIGHT_JUSTIFIED;
