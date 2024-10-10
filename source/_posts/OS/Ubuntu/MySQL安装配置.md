@@ -4,7 +4,6 @@ date: 2024-07-28 20:41:00
 categories: "OS"
 tags: 
 - "Linux"
-- "Ubuntu"
 ---
 
 ## 安装
