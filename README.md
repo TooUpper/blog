@@ -2,7 +2,7 @@
 ## 克隆blog到本地
 
 ~~~shell
-git clone git@github.com:it-kay/blog.git
+git clone git@github.com:TooUpper/blog.git
 ~~~
 
 ## 下载依赖包
@@ -35,7 +35,7 @@ hexo deploy
 在根目录下创建`source/CNAME`文件内容为
 
 ```shell
-www.TooUpper.com // 自定义的域名
+www.TooUpper.org // 自定义的域名
 ```
 
 然后重新发布即可。
