@@ -7,7 +7,7 @@ date: 2024-05-03 22:54:28
 
 ## 联系方式
 
-- 手机：18452222128
+- 手机：19145466784
 
 - Email：kay@tooupper.com
 
@@ -20,7 +20,7 @@ date: 2024-05-03 22:54:28
  - kay / 男 / 1999 / 江苏淮安
  - 本科 / 苏州科技大学天平学院 
  - 工作年限：应届生(2025年6月毕业)
- - Github：http://github.com/it-kay
+ - Github：http://github.com/TooUpper
  - Blog：www.tooupper.org
  - 期望职位：嵌入式软件工程师 / Rust
  - 期望薪资：面议
