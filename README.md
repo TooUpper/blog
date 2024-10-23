@@ -51,3 +51,7 @@ www.TooUpper.org // 自定义的域名
 此问题原因是所用主题中的“search.js”文件获取 URL 时出现问题。
 
 将所用主题的`search.js`文件中的`url: $("link", this).attr("href")`替换为`url: $( "url" , this).text()`即可。
+
+**3.git clone git@github.com:TooUpper/blog.git 时克隆不了，即使网络是正常且挂了梯子**
+
+这种情况一般出现在新配置 SSH 的设备中，注意看下你的 git Bash 是不是弹窗提示你验证当前账号，一般验证即可；
