@@ -6,8 +6,6 @@ tags:
 - "嵌入式系统"
 ---
 
-![sldl](/public/image/嵌入式/传感器/KT6368A/sldl.png)
-
 在嵌入式系统中，**BootLoader（引导加载程序）** 是系统上电后首先执行的程序，主要用于系统启动和固件升级。它的作用至关重要，既是系统的“启动引导者”，也是固件更新的重要保障。
 
 ## BootLoader 定义
@@ -64,28 +62,3 @@ BootLoader 支持对系统固件进行升级，这在嵌入式开发中非常重
 3. **擦除 Flash 区域**：擦除旧的程序存储区。
 4. **写入新固件**：将接收到的数据写入 Flash。
 5. **重启执行新固件**：升级完成后重启 MCU，BootLoader 跳转执行新程序。
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-## 示例代码
-
-https://github.com/TooUpper/SensorDrive
-
-boot 
-
-app
-
-gujian
-
