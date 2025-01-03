@@ -49,11 +49,11 @@ RTX51 Tiny是一个轻量级的RTOS，适用于简单的应用程序，而RTX51 
 1. 新建一个项目
 2. 打开keil安装目录，来到`C51\RtxTiny2\SourceCode`目录，拷贝`Conf_tny.A51`和`RTX51TNY.LIB`到项目中。
 
-![RTX51bin](/public/image/嵌入式/MCU/OS/RTX51/RTX51bin.png)
+![RTX51bin](/public/image/嵌入式/OS/RTX51/RTX51bin.png)
 
 3. 打开配置，来到`Target`中，将`Operating system`修改为`RTX-51 Tny`
 
-![RTX51IDE](/public/image/嵌入式/MCU/OS/RTX51/RTX51IDE.png)
+![RTX51IDE](/public/image/嵌入式/OS/RTX51/RTX51IDE.png)
 
 4. 新建好`main.c`, 代码如下
 
@@ -95,7 +95,7 @@ void task_1() _task_ 1 {
 
 一、**RTX51 对于系统硬件的要求**
 
-![RTX51renwu](/public/image/嵌入式/MCU/OS/RTX51/RTX51renwu.png)
+![RTX51renwu](/public/image/嵌入式/OS/RTX51/RTX51renwu.png)
 
 二、**RTX51 任务的状态及定义**
 
@@ -175,6 +175,6 @@ typ 可以通过竖线（|）字符进行逻辑或操作。例如，K_TMO | K_SI
 
 一、报错：**WARNING L7: MODULE NAME NOT UNIQUE MODULE:  .\Objects\Conf_tny.obj (?RTX51_TINY_KERNAL)**
 
-![RTX51Bug1](/public/image/嵌入式/MCU/OS/RTX51/RTX51Bug1.png)
+![RTX51Bug1](/public/image/嵌入式/OS/RTX51/RTX51Bug1.png)
 
 将 Conf_tny.A51 放在 RTX51TNY.LIB 前面即可
