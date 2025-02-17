@@ -54,3 +54,30 @@ Project/
     └── Logs/                     // 日志文件
 ```
 
+## 问题
+
+一、**初始化编译报错**
+
+**error: non-ASM statement in naked function is not supported**
+
+修改编译器版本为 5 的版本
+
+如果 Missing:Compiler Version 5 没有要去[官网](https://developer.arm.com/documentation/ka005198/latest)下载（需要登陆注册吧比较麻烦，百度云中有了）
+
+**error: A1023E: File "..\Firmware\CMSIS\startup_stm32f10x_md.s" could not be opened: No such file or directory**
+
+**Error:  #5: cannot open source input file "..\Firmware\CMSIS\core_cm3.c": No such file or directory**
+
+**Error:  #5: cannot open source input file "..\Firmware\CMSIS\system_stm32f10x.c": No such file or directory**
+
+这是路径错了，正确的路径应该是 ..\CMSIS\system_stm32f10x.c，删掉多余的引用；
+
+**warning:  #223-D: function "assert_param" declared implicitly**
+
+在 stm32f10x.h 中没有引用 stm32f10x_conf.h 头文件，将其宏定义放开即可；添加 USE_STDPERIPH_DRIVER 宏。
+
+**Error: L6218E: Undefined symbol RCC_APB1PeriphResetCmd (referred from stm32f10x_usart.o).**
+
+引用的 RCC_APB1PeriphResetCmd 找不到，我们要将对应的 stm32f10x_rcc.h 添加到环境中；
+
+**Error: L6218E: Undefined symbol assert_param (referred from misc.o).**
