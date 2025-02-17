@@ -49,5 +49,5 @@ tags:
 
 **修改创建项目时的一些参数**
 
-![image-20250104231706551](C:\Users\kay\AppData\Roaming\Typora\typora-user-images\image-20250104231706551.png)
+
 
