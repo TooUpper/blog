@@ -983,6 +983,7 @@ void app_main(void){
 
 例如：fatal error: esp_bt.h: No such file or directory
 
-![image-20250120211959363](C:\Users\kay\AppData\Roaming\Typora\typora-user-images\image-20250120211959363.png)
+![wenti1](/public/image/嵌入式/MCU/ESP32/ESP32S3/wenti1.png)
 
-![image-20250120213226853](C:\Users\kay\AppData\Roaming\Typora\typora-user-images\image-20250120213226853.png)
+![wenti2](/public/image/嵌入式/MCU/ESP32/ESP32S3/wenti2.png)
+
