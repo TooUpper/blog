@@ -158,7 +158,6 @@ BootLoader 的主要工作是：
 /* 设备序号 */
 #define DEVICE_NO        1      //根据设备名进行更改，定死写在bootloader中
 
-
 /*=====用户配置(根据自己的分区进行配置)=====*/
 #define MCU_FLASH 			0x80000U 						   // MCU 的 Flash 大小
 #define MCU_FALSH_ADDR		0x08000000U				   		   // MCU 的 Flash 首地址
@@ -282,7 +281,6 @@ static int Flash_Erase_Sector(uint32_t start_addr, uint32_t end_addr) {
     HAL_FLASH_Lock();
     return 0; // 成功
 }
-
 
 /**
  * @brief Flash写若干个数据（word）
