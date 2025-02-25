@@ -10,15 +10,15 @@ tags:
 
 ## 电器特性
 
-![AHT21dqtx](/public/image/嵌入式/传感器/AHT21/AHT21dqtx.png)
+![AHT21dqtx](/public/image/嵌入式/IC/AHT21/AHT21dqtx.png)
 
 ## 引脚说明
 
-![AHT21yjsm](/public/image/嵌入式/传感器/AHT21/AHT21yjsm.png)
+![AHT21yjsm](/public/image/嵌入式/IC/AHT21/AHT21yjsm.png)
 
 ## 示例电路
 
-![AHT21sldl](/public/image/嵌入式/传感器/AHT21/AHT21sldl.png)
+![AHT21sldl](/public/image/嵌入式/IC/AHT21/AHT21sldl.png)
 
 为避免信号冲突，微处理器（MCU）必须只能驱动 SDA 和 SCL 在低电平。需要一个外部的上拉电阻（例如：4.7kΩ）将信号提拉至高电平。**上拉电阻已包含在 AHT21B 的微处理器的 I/O 电路中。**
 
@@ -30,7 +30,7 @@ tags:
 
 ### 设备地址
 
-![AHT21sbdz](/public/image/嵌入式/传感器/AHT21/AHT21sbdz.png)
+![AHT21sbdz](/public/image/嵌入式/IC/AHT21/AHT21sbdz.png)
 
 ## 读取流程
 
@@ -46,7 +46,7 @@ tags:
 
 > 注：在第一步的校准状态检验只需要上电时检查，在正常采集过程无需操作。
 
-![AHT21dqlc](/public/image/嵌入式/传感器/AHT21/AHT21dqlc.png)
+![AHT21dqlc](/public/image/嵌入式/IC/AHT21/AHT21dqlc.png)
 
 > 传感器在采集时需要时间,主机发出测量指令（0xAC）后,延时 80 毫秒以上再读取转换后的数据并判断返回的状态位是否正常。若状态比特位 [Bit7] 为 0 代表数据可正常读取,为 1 时传感器为忙状态,主机需要等待数据处理完成。
 
@@ -56,13 +56,13 @@ tags:
 
 相对湿度 RH 都可以根据 SDA 输出的相对湿度信号 S<sub>RH</sub> 通过如下公式计算获得（结果以 %RH 表示）：
 
-![AHT21sdzh](/public/image/嵌入式/传感器/AHT21/AHT21sdzh.png)
+![AHT21sdzh](/public/image/嵌入式/IC/AHT21/AHT21sdzh.png)
 
 ###  温度转换
 
 温度T都可以通过将温度输出信号 S<sub>T</sub> 代入到下面的公式计算得到（结果以温度 ℃ 表示）：
 
-![AHT21wdzh](/public/image/嵌入式/传感器/AHT21/AHT21wdzh.png)
+![AHT21wdzh](/public/image/嵌入式/IC/AHT21/AHT21wdzh.png)
 
 > 其中的 S<sub>RH</sub>、S<sub>T</sub> 代表的是读取到的 20 位数据。
 
