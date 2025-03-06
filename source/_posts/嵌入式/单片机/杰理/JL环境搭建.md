@@ -1,9 +1,9 @@
 ---
 title: "JL环境搭建"
 date: 2024-12-01 17:30:00
-categories: "杰理"
+categories: "JL"
 tags: 
-- "AC791N"
+- "杰里"
 ---
 
 SDK工程默认支持在 Windows 系统上，用 CodeBlocks 编译。
