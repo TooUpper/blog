@@ -1,51 +1,50 @@
-name: Deploy Hexo to blog_log
+name: Pages
 
 on:
   push:
     branches:
-      - main  # 你的默认分支，必要时改为 master
+      - main # default branch
 
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
-      # 检出代码
-      - name: Checkout
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
-          fetch-depth: 0  # 获取完整历史，便于部署
-
-      # 设置 Node.js 环境
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
+          token: ${{ secrets.GITHUB_TOKEN }}
+          # If your repository depends on submodule, please see: https://github.com/actions/checkout
+          submodules: recursive
+      - name: Use Node.js 18
+        uses: actions/setup-node@v4
         with:
-          node-version: '18'  # 与本地 Node.js 版本一致
-
-      # 缓存依赖
-      - name: Cache dependencies
-        uses: actions/cache@v3
+          # Examples: 20, 18.19, >=16.20.2, lts/Iron, lts/Hydrogen, *, latest, current, node
+          # Ref: https://github.com/actions/setup-node#supported-version-syntax
+          node-version: "18"
+      - name: Cache NPM dependencies
+        uses: actions/cache@v4
         with:
           path: node_modules
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          key: ${{ runner.OS }}-npm-cache
           restore-keys: |
-            ${{ runner.os }}-node-
-
-      # 安装 Hexo 和依赖
+            ${{ runner.OS }}-npm-cache
       - name: Install Dependencies
-        run: |
-          npm install -g hexo-cli
-          npm install
-
-      # 构建 Hexo 站点
-      - name: Build Hexo
-        run: |
-          hexo clean
-          hexo generate
-
-      # 部署到 blog_log 分支
-      - name: Deploy to blog_log
-        uses: JamesIves/github-pages-deploy-action@v4
+        run: npm install
+      - name: Build
+        run: npm run build
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          branch: blog_log  # 部署到的分支
-          folder: public    # Hexo 生成的静态文件目录
-          target-folder: .  # 部署到 blog_log 分支根目录
+          path: ./public
+  deploy:
+    needs: build
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
