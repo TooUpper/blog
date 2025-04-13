@@ -28,6 +28,10 @@ hexo clean
 hexo generate
 hexo server //如果本地到localhost:4000预览博客效果没问题可省略
 hexo deploy
+===========================================================
+// 目前改为通过 GitHub Actions 部署
+// 通过在项目根目录创建 .github/workflows/deploy.yml 文件使其自动部署
+// 每次 git push 推送后会自动进行部署
 ```
 
 ## 如果每次hexo d都自定义域名失效，则
@@ -35,7 +39,7 @@ hexo deploy
 在根目录下创建`source/CNAME`文件内容为
 
 ```shell
-www.TooUpper.org // 自定义的域名
+www.TooUpper.com // 自定义的域名
 ```
 
 然后重新发布即可。
