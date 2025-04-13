@@ -1,48 +1,51 @@
-name: kay Blog CI/CD # 脚本 workflow 名称
+name: Deploy Hexo to blog_log
 
 on:
   push:
-    branches: [main] # 当监测 main,master 的 push
-    paths: # 监测所有 source 目录下的文件变动，所有 yml,json 后缀文件的变动。
-      - '*.json'
-      - '**.yml'
-      - '**/source/**'
+    branches:
+      - main  # 你的默认分支，必要时改为 master
 
 jobs:
-  blog: # 任务名称
-    timeout-minutes: 30 # 设置 30 分钟超时
-    runs-on: ubuntu-latest # 指定最新 ubuntu 系统
+  build-and-deploy:
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2 # 拉取仓库代码
-      - uses: actions/setup-node@v2 # 设置 node.js 环境
-      - name: Cache node_modules # 缓存 node_modules，提高编译速度，毕竟每月只有 2000 分钟。
-        uses: actions/cache@v2 # 亲测 Github 服务器编译速度比我自己电脑都快，如果每次构建按5分钟计算，我们每个月可以免费部署 400 次，Github yyds！！！
-        env:
-          cache-name: cache-node-modules
+      # 检出代码
+      - name: Checkout
+        uses: actions/checkout@v3
         with:
-          path: ~/.npm
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+          fetch-depth: 0  # 获取完整历史，便于部署
+
+      # 设置 Node.js 环境
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'  # 与本地 Node.js 版本一致
+
+      # 缓存依赖
+      - name: Cache dependencies
+        uses: actions/cache@v3
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
-            ${{ runner.os }}-build-${{ env.cache-name }}-
-            ${{ runner.os }}-build-
-            ${{ runner.os }}-
-      - name: Init Node.js # 安装源代码所需插件
+            ${{ runner.os }}-node-
+
+      # 安装 Hexo 和依赖
+      - name: Install Dependencies
         run: |
+          npm install -g hexo-cli
           npm install
-          echo "init node successful"
-      - name: Install Hexo-cli # 安装 Hexo
-        run: |
-          npm install -g hexo-cli --save
-          echo "install hexo successful"
-      - name: Build Blog # 编译创建静态博客文件
+
+      # 构建 Hexo 站点
+      - name: Build Hexo
         run: |
           hexo clean
-          hexo g
-          echo "build blog successful"
-      - name: Deploy DoubleAm's Blog # 设置 git 信息并推送静态博客文件
-        run: |
-          git config --global user.name "kay"
-          git config --global user.email "kay@tooupper.com"
-          hexo deploy
+          hexo generate
 
-      - run: echo "Deploy Successful!"
+      # 部署到 blog_log 分支
+      - name: Deploy to blog_log
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: blog_log  # 部署到的分支
+          folder: public    # Hexo 生成的静态文件目录
+          target-folder: .  # 部署到 blog_log 分支根目录
