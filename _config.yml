@@ -10,7 +10,7 @@ timezone: 'Asia/Shanghai'    # 网站时区
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
 url: https://www.TooUpper.com   # 网址
-root: /blog/ # 设置 root: /blog/ 来确保链接（如 CSS、JS、文章路径）正确解析。
+root: /
 permalink: :title/    # 网站永久链接
 permalink_defaults:
 pretty_urls:
