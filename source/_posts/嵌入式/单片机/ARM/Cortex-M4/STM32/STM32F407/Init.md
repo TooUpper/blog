@@ -8,59 +8,45 @@ tags:
 
 ## 准备阶段
 
-下载相关文件，STM32F407 的用户手册、数组手册、选型手册、固件使用指南（一般下载固件库时会附带）等。
+下载相关文件，STM32F407 的参考手册、数据手册、选型手册、固件使用指南（一般下载固件库时会附带）等。
+[STM32标准外设软件库 - 意法半导体STMicroelectronics](https://www.st.com.cn/zh/embedded-software/stm32-standard-peripheral-libraries.html)
+[STM32文档手册 - 意法半导体STMicroelectronics](https://www.st.com.cn/zh/microcontrollers-microprocessors/stm32-32-bit-arm-cortex-mcus.html)
 
 ## 创建项目与配置
 
 **创建项目**
-
 在工程目录中创捷下列文件夹
 
 ```c
 // 目录结构
-
 Demo01
 └── Docs/		 // 说明文档 README.md
 └── Project/	 // 存放 Keil 文件和生成的一些配置文件、hex 文件     
 ├── CMSIS/       // CMSIS 中 ARM 相关文件
-├── Hardware/    // 协议层代码
 ├── Firmware/    // 官方标准固件库中的驱动程序
 ├── Drivers/     // 外设硬件驱动程序
 ├── Middleware/  // 上层中间件组件
-├── App/         // 应用层代码
-└── User/      	 // 入口层     
+├── App/         // 应用层入口代码    
 ```
 
 **文件移植**
 
 将官方标准固件库中我们需要的的文件拷贝到对应的工程目录中去：
-
 **CMSIS** --> 官方标准固件库中的 CMSIS 中的代码；
-
 **Firmware** --> 官方标准固件库中的外设驱动；
-
 **Drivers** --> 我们自己封装的驱动，如按键、显示屏等；
-
 **Middleware** --> 项目中的中间件，如上位机的可视化界面等；
+**App** --> 程序的入口和具体的业务处理逻辑；
+**Project** --> Keil 工程的目录；
 
-**App** --> 具体的业务处理逻辑
-
-**User** --> 程序的入口和一些工具文件
-
-**Project** --> Keil 文件的目录
-
-那么具体都是要拷贝哪些软件呢，
-
-- 将对应目录下文件都拷贝过去，然后将所有 .c 文件添加进项目中然后在解决错误问题（不建议）
-
-- 查看官方的示例代码，看看人家官方示例是需要拷贝那些，
-  - 打开 Keil 查看他的工程目录，然后从官方库中复制对应的文件到我们自己的项目中；(注意，一般工程中只会显示 .c 文件但我们要记得将对应的 .h 文件一起拷贝)
-  - 注意在每一款芯片的固件库中都包含一个用于导入所有固件库的头文件，这个头文件在示例工程中可能并没有导入，但我们不要忘记导入，他一般存在于示例代码的模板目录下，STM32 中叫做 stm32f4xx_conf.h；
+那么具体都是要拷贝哪些软件呢：
+查看官方的示例代码，看看人家官方示例是需要拷贝那些：
+	打开 Keil 查看他的工程目录，然后从官方库中复制对应的文件到我们自己的项目中；(注意，一般工程中只会显示 .c 文件但我们要记得将对应的 .h 文件一起拷贝)
+	注意在每一款芯片的固件库中都包含一个用于导入所有固件库的头文件，这个头文件在示例工程中可能并没有导入，但我们不要忘记导入，他一般存在于示例代码的模板目录下，STM32 中叫做 stm32f4xx_conf.h；
 
 **在 Keil 工程中创建工程目录并添加对应的文件**
-
-- 创建 Keil 工程并新建对应的工程目录
-- 将工程文件夹下的 .C 文件添加到 Keil 工程中去
+创建 Keil 工程并新建对应的工程目录
+将工程文件夹下的 .C 文件添加到 Keil 工程中去
 
 ![F407Keilyinruwenjian](/public/image/嵌入式/MCU/ARM/Cortex-M4/GD32/GD32F407/F407Keilyinruwenjian.png)
 
@@ -71,101 +57,45 @@ Demo01
 **其他 Keil 配置**
 
 1. **芯片的型号要与所用硬件一致**
-
-""魔术棒" --> "Device" 下的芯片型号与我们用的硬件是否一样，不一样就要改；
+   "魔术棒" --> "Device" 下的芯片型号与我们用的硬件是否一样，不一样就要改；
 
 2. **编译器版本是否正确**
-
-""魔术棒" --> "Target" 下 ARM Compiler 的版本是否为 "Use default compiler version 6"，如果 “missing compiler version 5” 表示 5 这个版本的不存在那么我们也要去安装；
-
-勾选 "Use Micro LIB" 以优化代码；
+   "魔术棒" --> "Target" 下 ARM Compiler 的版本是否为 "Use default compiler version 6"，如果 “missing compiler version 5” 表示 5 这个版本的不存在那么我们也要去安装；
+   这里的编译工具版本最好和标准库中是实例代码保持一致；
+   勾选 "Use Micro LIB" 以优化代码；
 
 3. **是否生成 .HEX 文件**
-
-“魔术棒” --> "Output" 下勾选 "Create HEX File";
+   “魔术棒” --> "Output" 下勾选 "Create HEX File";
 
 4. **设置 C 和 C++ 的编译器版本，不然有些宏关键字它可能不识别，设置代码优化级别**
-
-"魔术棒" --> "C/C++" 下的 Language C 设置为 "C990"，Language C++ 设置为 "C++ 11"
-
-设置编译警告的级别，选择 "Wamings" 中的内容为 "AC5-like Wamings"，表示与 Keil5 一致；
-
-设置代码优化的级别，选择 "Optimizaion" 中的内容为 "-O1"，级别越高优化程序越高，但是太高了有时候会出错，此处设置为 "-O1" 即可；
+   "魔术棒" --> "C/C++" 下的 Language C 设置为 "C990"，Language C++ 设置为 "C++ 11"
+   设置编译警告的级别，选择 "Wamings" 中的内容为 "AC5-like Wamings"，表示与 Keil5 一致；
+   设置代码优化的级别，选择 "Optimizaion" 中的内容为 "-O1"，级别越高优化程序越高，但是太高了有时候会出错，此处设置为 "-O1" 即可；
 
 5. **添加 Keil 工程中的使用文件的路径**
-
-"魔术棒" --> "C/C++" 下的 "Include Path" 中进行添加；
+   "魔术棒" --> "C/C++" 下的 "Include Path" 中进行添加；
 
 6. **选择所使用的烧录器**
-
-"魔术棒" --> "Debug" 下右侧 "Use" 中的烧录器，此处我们设置为 "CMSIS-DAP Debugger";
-
-勾选自动复位并运行，左侧 "Setting" --> "Flash Download" 中勾选 "Reset and Run";
-
-通常如果烧录器连上后可以在  "Setting" --> "Debug" 右侧中的 "SW Device" 中看到；
+   "魔术棒" --> "Debug" 下右侧 "Use" 中的烧录器，此处我们设置为 "CMSIS-DAP Debugger";
+   勾选自动复位并运行，左侧 "Setting" --> "Flash Download" 中勾选 "Reset and Run";
+   通常如果烧录器连上后可以在  "Setting" --> "Debug" 右侧中的 "SW Device" 中看到；
 
 ## 开发与调试
 
 1. **示例的 main.c 中使用的芯片与我们不一致，所以需要删掉他的头文件和其代码**
 
 ```c
-#include "gd32f4xx.h"
-#include "systick.h"
+#include "stm32f4xx.h"
 #include <stdio.h>
-#include "main.h"
-#include "gd32f450i_eval.h" // 删掉
-
-// 整个函数删掉
-void led_spark(void) {
-    static __IO uint32_t timingdelaylocal = 0U;
-
-    if(timingdelaylocal) {
-
-        if(timingdelaylocal < 500U) {
-            gd_eval_led_on(LED1);
-        } else {
-            gd_eval_led_off(LED1);
-        }
-
-        timingdelaylocal--;
-    } else {
-        timingdelaylocal = 1000U;
-    }
-}
 
 int main(void) {
+	
+	while(1) {
+	
+	}
 
-    gd_eval_led_init(LED1); // 这个调用语句也删掉
-    systick_config();
-
-    while(1) {
-    }
 }
-
-// gd32f4xx_it.c 中调用了 led_spark() 我们也要讲他删掉
 ```
-
-2. **编译运行这时他会报错，提示缺少一些文件，我们去看这些文件在我们的目录中是否存在，如果不存在就加进来**
-
-   这里一般情况下是缺少 "core_cmFunc.h"，"core_cm4.h"，"core_cm4_simd.h"，"core_cmlnstr.h"，这四个
-
-3. **此时还是报错，我们点击报错的语句，发现他会跳到某些个 include 处报错：D:/Tools/IDE/keil/keil/ARM/Packs/GigaDevice/GD32F4xx_DFP/3.0.3/Device/F4XX/Include\gd32f4xx_libopt.h(11): error: 'RTE_Components.h' file not found；**
-
-- 注意看他这个报错信息中的路径好像用的不是我们本地的那个呀，那么 ok，我们首先要将 gd32f4xx_libopt.h 包含在我们的项目本地，确保他在本地是存在的，
-
-- gd32f4xx_libopt.h 这个文件是在哪被声明使用的呢？，我们发现，他是在 gd32f4xx.h 中被声明使用的，那么 gd32f4xx.h 这个文件在本地是否存在呢，如果不存在就需要从标准固件库中添加进我们的项目中；
-
-此时，运行它使用的就是我们本地的 gd32f4xx_libopt.h 文件了，这时它有时候还会报错某些引用错误，但这是官方的标准文件是不会出错了，那么大概率就是某些头没有导入，他某些头文件的导入是通过宏来定义的；我们需要在 Keil 中定义某些宏；
-
-4. **简化外设库的使用**
-
-我们看 gd32f4xx_libopt.h 文件发现其中定义了很多的头文件，但是它需要通过宏去判断是否导入这些头文件，所以此时我们需要添加这些宏关键字；
-
-"魔术棒" --> "C/C++" 下的 "Define" 中进行添加；"USE_STDPERIPH_DRIVER,GD32F407"，这两个宏定义，
-
-USE_STDPERIPH_DRIVER 用于在 gd32f4xx.h 中展开 gd32f4xx_libopt.h 头文件（这一句可以不加，它本身会做判断，不存在就自动定义）；
-
-GD32F407 用于在 gd32f4xx_libopt.h 展开标准固件库中的头文件；
 
 ## 烧写与验证
 
