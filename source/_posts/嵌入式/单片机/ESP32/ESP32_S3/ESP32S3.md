@@ -6,6 +6,10 @@ tags:
 - "ESP32-S3"
 ---
 
+## 功能框图
+
+![s3gnkt](/public/image/嵌入式/MCU/ESP32/ESP32S3/s3gnkt.png)
+
 ## FreeRTOS(IDF)
 
 原始 FreeRTOS 是一款小巧高效的实时操作系统，适用于许多单核 MCU 和 SoC。**但为了支持双核 ESP 芯片，如ESP32、ESP32-S3、ESP32-P4，ESP-IDF 特别提供了支持双核对称多处理 (SMP) 的 FreeRTOS 实现**（下文称 IDF FreeRTOS）。
