@@ -1,7 +1,7 @@
 ---
 title: "CAN"
 date: 2025-06-10 08:35:00
-categories: "Modbus"
+categories: "通信协议"
 tags: 
 - "通讯协议"
 ---
