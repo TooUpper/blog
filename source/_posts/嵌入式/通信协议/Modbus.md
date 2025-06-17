@@ -1,9 +1,9 @@
 ---
 title: "Modbus"
 date: 2025-05-08 18:43:00
-categories: "Modbus"
+categories: "通信协议"
 tags: 
-- "Modbus"
+- "通信协议"
 ---
 
 
