@@ -1,0 +1,218 @@
+##############################################################################
+# Content
+##############################################################################
+
+# 链接到一个页面，该页面概述了您的所有项目。
+# 这可以是一个外部链接（例如，到你的GitHub档案）或到另一个页面。
+projects_url: http://github.com/TooUpper
+
+# Set the page direction to RTL or LTR. default is LTR. (if you set it 'rtl', the 'vazir' font will be loaded.)
+direction: ltr
+# 配置导航菜单。
+# 一对"Key:url"将生成导航菜单中名为"Key"的"url"链接。
+# 您可以选择添加 languages/*.yml中"Key"的翻译
+nav:
+  home: /
+  博主: /about/
+  tag: /tags/
+  category: /categories/
+  articles: /archives/
+  search: /search/
+
+
+# 链接到您的社交媒体帐户。
+# ''icon''键应与 Fontawesome 图标名称相对应
+# (https://fontawesome.com/icons?d=gallery&s=brands);
+#只有“mail”是一个例外。
+#您可以选择添加“label”键来设置链接上的title属性。
+#缺少“label”时，“icon”值将用作标题。
+social_links:
+  -
+    icon: github
+    link: http://github.com/TooUpper
+  -
+    icon: x-twitter
+    link: /
+  -
+    icon: facebook
+    link: /
+  -
+    icon: mail
+    link: mailto:kay@tooupper.com
+  -
+    icon: weixin
+    link: weixin://
+  -
+    icon: qq
+    link: tencent://message/?uin=3980202035&Site=www.xxxxxx.com&Menu=yes
+
+# Customize the overview with displaying a tagcloud on the index page.
+# Options: https://hexo.io/docs/helpers.html#tagcloud
+tags_overview: true
+
+# Customize the overview with the most recent blog posts on the index page.
+# Options:
+#   - show_all_posts: whether to show all available posts.
+#   - post_count: whether to show only the x most recent posts.
+#   - sort_updated: sort posts by last modification date instead of creation date.
+posts_overview:
+  show_all_posts: false
+  post_count: 15
+  sort_updated: false
+
+# Customize the archive view.
+# Options:
+#   - sort_updated: sort posts by last modification date instead of creation date.
+# Note: this does not work together with pagination, since the pagination
+# plugin will sort pages by date of creation.
+archive:
+  sort_updated: false
+
+# Customize the article view.
+# Options:
+#   - show_updated: show the last modification date.
+post:
+  show_updated: false
+
+# Customize the copyright years
+# Note: if start_year/end_year not provided, will use current year.
+copyright:
+  start_year: 2024
+  end_year:
+
+# Customize the 404 page
+# Options:
+#   - enabled: whether to enable the 404 page (404.html).
+error_404:
+  enabled: true
+  title: "404 Page Not Found"
+  description: "The page you are looking for might have been removed, had its name changed, or is temporarily unavailable."
+
+
+##############################################################################
+# Look and Feel
+##############################################################################
+
+# Customize the logo (i.e., the cactus) in the header.
+# Options:
+#   - enabled: whether to show (true) or hide (false) the logo.
+#   - width: width of the logo in pixel units
+#   - height: height of the logo in pixel units
+#   - url: where the logo can be found
+#   - gravatar: whether to use your Gravatar as the logo
+#   - grayout: whether to enable a hover effect on the logo
+logo:
+  enabled: true
+  width: 50
+  height: 50
+  url: /images/logo.png
+  gravatar: false
+  grayout: true
+
+# Customize the favicons.
+# Cactus supports a limited set of the three most important icons:
+#   - desktop: The classic favion.ico file.
+#   - android: A 192x192 PNG file.
+#   - apple:  A 180x180 PNG file.
+# These can be generated with http://realfavicongenerator.net/
+# Options:
+#   - url: where the icon can be found
+#   - gravatar: whether to create a favicon from your Gravatar
+favicon:
+  desktop:
+    url: /images/favicon.ico
+    gravatar: false
+  android:
+    url: /images/favicon-192x192.png
+    gravatar: false
+  apple:
+    url: /images/apple-touch-icon.png
+    gravatar: false
+
+# The color scheme that should be used to highlight codeblocks.
+# See source/css/_highlight for a list of all available color schemes.
+# highlight: rainbow
+
+# 设置主题配置
+# 可用的配色方案有'dark', 'light', 'classic' and 'white'。
+# 或者,将您自己的自定义配色方案添加到source/css_colors中。
+colorscheme: light
+
+# 页面的最大宽度（以雷姆为单位）。
+page_width: 48
+
+
+##############################################################################
+# Miscellaneous
+##############################################################################
+
+# Enable or disable the RSS feed.
+rss: false
+
+# Turn your web pages into graph objects (see http://ogp.me).
+open_graph:
+  fb_app_id:
+  fb_admins:
+  twitter_id:
+  google_plus:
+
+
+##############################################################################
+# Plugins
+##############################################################################
+
+# #为Latex启用MathJax支持
+mathjax:
+  enabled: true
+
+# #填写您的Disqus评论简称以启用Disqus注释。
+disqus:
+  enabled: false
+  shortname: cactus-1
+
+# Fill in your Utterances data to enable Utterances comments
+utterances:
+  enabled: false
+  repo: owner/githubrepo
+  issue_term: pathname
+  label: Comment
+  theme: github-dark
+
+# Fill in your Google Analytics tracking ID to enable Google Analytics.
+google_analytics:
+  enabled: false
+  id: UA-86660611-1
+
+# Fill in your Baidu Analytics tracking ID to enable Baidu Analytics.
+baidu_analytics:
+  enabled: false
+  id: 2e6da3c375c8a87f5b664cea6d4cb29c
+
+# Fill in your Cloudflare Analytics tracking ID to enable Cloudflare Analytics.
+cloudflare_analytics:
+  enabled: false
+  id: 0dabb6e21848405483a237e6a7b6ed04
+
+# Fill in your Umami Analytics tracking ID to enable Umami Analytics.
+umami_analytics:
+  enabled: false
+  id: e77e68be-f6e4-4br3-9365-2b76b57cd571
+  host: https://analytics.domain.com
+  script_name: umami.js
+
+# Fill in you Gravatar email or hash if you want to use your gravatar as the
+# logo and/or favicons of you website.
+# To generate hash: `$ echo -n "name@email.com" | md5`.
+gravatar:
+  email: name@email.com
+  hash: d41d8cd98f00b204e9800998ecf8427e
+
+
+# loads libraries and styles from CDN instead or relying on local files
+cdn:
+  enable: true
+  jquery: https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js
+  clipboard: https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js
+  font_awesome: https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css
+  justified_gallery_css: https://cdnjs.cloudflare.com/ajax/libs/justifiedGallery/3.8.1/css/justifiedGallery.min.css
+  justified_gallery_js: https://cdnjs.cloudflare.com/ajax/libs/justifiedGallery/3.8.1/js/jquery.justifiedGallery.min.js
