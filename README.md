@@ -47,15 +47,14 @@ www.TooUpper.com // 自定义的域名
 ## 错误
 
 **1.powershell 提示在此系统上禁止运行脚本**
-
-**系统** -> **开发者选项** -> **PowerShell** -> 打开*更改执行策略，以允许本地PowerShell脚本在未签名的情况下运行*。远程脚本需要签名”。
+*系统** -> **开发者选项** -> **PowerShell** -> 打开*更改执行策略，以允许本地PowerShell脚本在未签名的情况下运行*。远程脚本需要签名”。
 
 **2.本地搜索报错`redirect error search/undefined`**
-
 此问题原因是所用主题中的“search.js”文件获取 URL 时出现问题。
-
 将所用主题的`search.js`文件中的`url: $("link", this).attr("href")`替换为`url: $( "url" , this).text()`即可。
 
 **3.git clone git@github.com:TooUpper/blog.git 时克隆不了，即使网络是正常且挂了梯子**
-
 这种情况一般出现在新配置 SSH 的设备中，注意看下你的 git Bash 是不是弹窗提示你验证当前账号，一般验证即可；
+
+**4.执行 hexo clean，时报错：bash: hexo: command not found**
+重启一下，如果还是不行则说明环境变量配置错误。
