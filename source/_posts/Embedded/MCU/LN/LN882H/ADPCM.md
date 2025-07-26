@@ -95,13 +95,13 @@ void adpcm_coder(short *input_samples, signed char *output_adpcm, int sample_cou
     signed char *output_ptr = output_adpcm;
 
     // 从状态恢复：上一次预测值和步长索引
-    int predicted_sample = state->valprev;    // 上次预测值（16 位 PCM）
-    int step_index = state->index;           // 步长表索引（0-88）
-    int step_size = stepsizeTable[step_index]; // 当前量化步长
+    int predicted_sample = state->valprev;    	// 上次预测值（16 位 PCM）
+    int step_index = state->index;           	// 步长表索引（0-88）
+    int step_size = stepsizeTable[step_index]; 	// 当前量化步长
 
     // 打包控制：每两个 4 位样本组成 1 字节
-    int temp_adpcm_value = 0;                // 临时存储 4 位 ADPCM 值
-    int is_first_nibble = 1;                 // 1: 存低 4 位，0: 存高 4 位并写入
+    int temp_adpcm_value = 0;	// 临时存储 4 位 ADPCM 值
+    int is_first_nibble = 1;// 1: 存低 4 位，0: 存高 4 位并写入
 
     // 处理每个输入样本
     while (sample_count > 0) {
