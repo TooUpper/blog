@@ -19,7 +19,7 @@ MOS管主要由三部分构成：
 
 MOS 管通常分为 **N沟道（N-Channel）**和 **P沟道（P-Channel）**两种类型，分别根据导电通道是由 N 型还是 P 型半导体形成来区分。
 
-![msgylt](../../public/image/Hardware/msgylt.png)
+![msgylt](../../public/image/Hardware/MOS/msgylt.png)
 
 > G极(gate)—栅极，不用说比较好认
 >
@@ -31,7 +31,7 @@ MOS 管通常分为 **N沟道（N-Channel）**和 **P沟道（P-Channel）**两�
 
 ## 沟道判别
 
-![nppb](../../public/image/Hardware/nppb.png)
+![nppb](../../public/image/Hardware/MOS/nppb.png)
 
 > 箭头指向G极的是N沟道
 > 箭头背向G极的是P沟道
@@ -47,7 +47,7 @@ MOS 管是一种**电压控制器件**，它的工作状态由**栅极的电压*
 
 cMOS是结合了nMOS 和pMOS 的电路结构，继承了 MOS管低功耗、高速运行的特点，是现代半导体器件的基本结构。
 
-![cmos](../../public/image/Hardware/cmos.png)
+![cmos](../../public/image/Hardware/MOS/cmos.png)
 
 利用 cMOS 就可以实现最基本的反相器。
 
@@ -57,7 +57,7 @@ cMOS是结合了nMOS 和pMOS 的电路结构，继承了 MOS管低功耗、高�
 
 5V 与 3.3V 互转就是一个比较常见的 MOS管用例电路：下图是一个利用串口通信时候 3.3V 与 5V 互转的一个案例
 
-![5vz33vdlt](../../public/image/Hardware/5vz33vdlt.png)
+![5vz33vdlt](../../public/image/Hardware/MOS/5vz33vdlt.png)
 
 电路连接如下:
 **栅极（G）**：通过 R89（10kΩ）连接到 VCC-3.3V，因此栅极电压 V_G = 3.3V（固定)。
@@ -75,9 +75,9 @@ N 沟道增强型 MOSFET（如 2N7002）的导通条件是：
 
 体二极管是 MOSFET 制造工艺中无法避免的寄生结构，其本质是由器件的衬底（Body）与源极、漏极之间形成的 PN 结构成。从结构上看，未作特殊连接时的 MOSFET 可被视作两个背靠背的二极管。在实际电路设计中，为消除衬偏效应，通常会将**源极与衬底相连，此时衬底与漏极之间便形成了一个单一的二极管，即我们常说的体二极管（或寄生二极管）**。
 
-![nptrjg](../../public/image/Hardware/nptrjg.png)
+![nptrjg](../../public/image/Hardware/MOS/nptrjg.png)
 
-![nostrjg](../../public/image/Hardware/nostrjg.png)
+![nostrjg](../../public/image/Hardware/MOS/nostrjg.png)
 
 上图中是以 NMOS 为例。
 
@@ -90,4 +90,4 @@ N 沟道增强型 MOSFET（如 2N7002）的导通条件是：
 **正向偏置**：体二极管导通的必要条件是 **源极电压（V_S）高于漏极电压（V_D）**，且两者的电压差超过 PN 结的正向导通电压（约 0.7V）。(V<sub>s</sub> - V<sub>D</sub> > V<sub>F</sub>)
 **反向偏置**：当 $ V_D > V_S $ 时，体二极管处于反向偏置状态，不导通（除非反向电压超过击穿电压）。
 
-![5vz33vylt](../../public/image/Hardware/5vz33vylt.png)
+![5vz33vylt](../../public/image/Hardware/MOS/5vz33vylt.png)
