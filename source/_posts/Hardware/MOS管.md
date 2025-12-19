@@ -8,6 +8,8 @@ tags:
 
 MOS管(Metal-Oxide-Semiconductor Field-Effect Transistor，MOSFET)是一种广泛应用于电子电路中的场效应晶体管（FET）。它利用**电场效应**来控制电流流动，是数字和模拟电路中常见的元件。MOS 管凭借其高输入阻抗和低功耗特性，在功率开关、信号放大以及逻辑电路中有着广泛的应用。
 
+![mosfz](../../public/image/Hardware/MOS/mosfz.png)
+
 ## 结构
 
 MOS管主要由三部分构成：
